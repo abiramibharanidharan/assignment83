@@ -1,3 +1,29 @@
 <h1>
   {{title}}
 </h1>
+<h1> Add a Student </h1>
+
+   <label>Id:</label>
+   <input type="number" [(ngModel)]="id" name="id" id="idnum" placeholder="Enter id" #idnum ><br>
+   <label>Name:</label>
+   <input type="text" [(ngModel)]="name" name="name" id="first" placeholder="Enter name" #first ><br><br>
+   
+    <label>Gender</label>
+    
+    <select class="txt-box" [(ngModel)]="genderTypes" name="gender" id="type" #type>
+      <option [value]="genderTypes" >Select option</option>
+      <option *ngFor="let gender of genderType" [ngValue]="gender.type">
+        gender={{gender.type}}</option>
+     </select>
+    
+   
+<div>
+<input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Add" (click)="addStudent(id,name,genderTypes)">
+</div>
+
+<div *ngIf="studentArray.length>0">
+  <studentlist [studentDetail]="studentArray">
+  </studentlist>
+  
+</div>
+

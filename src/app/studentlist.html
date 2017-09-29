@@ -1,0 +1,20 @@
+<h1>
+     List of Student
+ </h1>
+<hr/>
+<table class="studentDetail" border="1">
+    <thead>
+        <td>Student Id </td>
+        <td>Student Name </td>
+        <td>Gender</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let studentList of studentDetail">
+            
+            <td>{{studentList?.id}}</td>
+            <td>{{studentList?.name}}</td>
+            <td> {{studentList?.gender}}</td>
+        </tr>
+    </tbody>
+</table>
+
